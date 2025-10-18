@@ -1,0 +1,2754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiNik - Header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Top Info Bar */
+        .top-bar {
+            background-color: #f8f8f8;
+
+            padding: 0.6rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .top-bar-left {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            color: #333;
+        }
+
+        .top-bar-left i {
+            color: #e94b3c;
+            margin-right: 0.3rem;
+        }
+
+        .top-bar-right {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        .top-bar-right a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .top-bar-right a:hover {
+            color: #0088cc;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #0088cc;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #005fa3;
+        }
+
+        .nav-links a.dropdown::after {
+            content: " ▼";
+            font-size: 0.7rem;
+            margin-left: 0.3rem;
+        }
+
+        /* Request Quote Button */
+        .request-quote-btn {
+            background: linear-gradient(135deg, #0088cc, #00a8e8);
+            color: white;
+            padding: 0.75rem 1.8rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .request-quote-btn:hover {
+            background: linear-gradient(135deg, #005fa3, #0088cc);
+            box-shadow: 0 6px 16px rgba(0, 136, 204, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 0.4rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #0088cc;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .navbar {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .top-bar {
+                padding: 0.6rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+                padding: 0.5rem 1rem;
+            }
+
+            .top-bar-left,
+            .top-bar-right {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .navbar {
+                padding: 0.8rem 1rem;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: white;
+                gap: 1rem;
+                padding: 1.5rem;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                z-index: 99;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translateY(10px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translateY(-10px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+            }
+
+            .request-quote-btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .top-bar-left {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <span><i class="fas fa-envelope"></i>info@diginik.in</span>
+            <span>|</span>
+            <span>Jalgaon</span>
+        </div>
+        <div class="top-bar-right">
+            <a href="tel:+919999999999" title="Phone"><i class="fas fa-phone"></i></a>
+            <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <span style="font-size: 1.8rem; font-weight: bold;">DigiNik</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#home">HOME</a>
+            <a href="#about" class="dropdown">ABOUT US</a>
+            <a href="#services" class="dropdown">SERVICES</a>
+            <a href="#technology" class="dropdown">TECHNOLOGY</a>
+            <a href="#blog">BLOG</a>
+            <a href="#contact">CONTACT US</a>
+            <a href="#quote" class="request-quote-btn">Request A Quote</a>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiNik - Awards & Recognition</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Awards Section */
+        .awards-section {
+            background: linear-gradient(135deg, #1a1410 0%, #3d2817 50%, #1a1410 100%);
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, #1a1410 0%, #3d2817 50%, #1a1410 100%);
+            background-size: 100% 100%, 100% 100%, 100% 100%;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Particle/Sparkle Effect Background */
+        .awards-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,.2)),
+                radial-gradient(2px 2px at 60px 70px, #fff, rgba(0,0,0,.5)),
+                radial-gradient(1px 1px at 50px 50px, #fff, rgba(0,0,0,.8)),
+                radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,.6)),
+                radial-gradient(2px 2px at 90px 10px, #fff, rgba(0,0,0,.8));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 1;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Awards Container */
+        .awards-container {
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Main Content */
+        .awards-content {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .awards-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .start-btn {
+            background: linear-gradient(135deg, #0088cc, #00a8e8);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.4);
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .start-btn:hover {
+            background: linear-gradient(135deg, #005fa3, #0088cc);
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.6);
+            transform: translateY(-3px);
+        }
+
+        /* Awards Carousel */
+        .awards-carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        /* Award Item */
+        .award-item {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 0 40px rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .award-item:nth-child(1) {
+            animation-delay: 0s;
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+        }
+
+        .award-item:nth-child(2) {
+            animation-delay: 0.2s;
+            background: linear-gradient(135deg, #4169e1 0%, #1e90ff 100%);
+        }
+
+        .award-item:nth-child(3) {
+            animation-delay: 0.4s;
+            background: linear-gradient(135deg, #2b3e50 0%, #34495e 100%);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .award-item:hover {
+            transform: scale(1.05) translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), inset 0 0 50px rgba(255, 255, 255, 0.15);
+        }
+
+        .award-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8) contrast(1.1);
+        }
+
+        .award-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            right: 2rem;
+            bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 50;
+        }
+
+        .floating-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+
+        .floating-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366, #1da851);
+        }
+
+        .call-btn {
+            background: linear-gradient(135deg, #0088cc, #005fa3);
+        }
+
+        .floating-btn-icon {
+            font-size: 1.5rem;
+        }
+
+        .floating-btn-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 0.75rem;
+        }
+
+        .floating-btn-text .label {
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .floating-btn-text .sub-label {
+            opacity: 0.85;
+            font-size: 0.7rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .awards-section {
+                min-height: auto;
+                padding: 3rem 1.5rem;
+            }
+
+            .awards-content h2 {
+                font-size: 2rem;
+            }
+
+            .award-item {
+                width: 240px;
+                height: 240px;
+            }
+
+            .awards-carousel {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .awards-section {
+                padding: 2rem 1rem;
+            }
+
+            .awards-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .award-item {
+                width: 200px;
+                height: 200px;
+            }
+
+            .awards-carousel {
+                gap: 1rem;
+                justify-content: space-between;
+            }
+
+            .floating-buttons {
+                right: 1rem;
+                bottom: 1rem;
+            }
+
+            .floating-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .floating-btn-icon {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .awards-section {
+                padding: 1.5rem 0.75rem;
+            }
+
+            .awards-content h2 {
+                font-size: 1.2rem;
+            }
+
+            .award-item {
+                width: 160px;
+                height: 160px;
+            }
+
+            .awards-carousel {
+                gap: 0.75rem;
+            }
+
+            .start-btn {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Awards Section -->
+    <section class="awards-section">
+        <div class="awards-container">
+            <!-- Content -->
+            <div class="awards-content">
+                <h2>Recognized as One of Maharashtra's Leading IT Companies</h2>
+                <button class="start-btn">START TODAY</button>
+            </div>
+
+            <!-- Awards Carousel -->
+            <div class="awards-carousel">
+                <!-- Award 1 - Pink Circular -->
+                <div class="award-item">
+                    <img src="photos/pic.1.jpg" alt="Award 1">
+                </div>
+
+                <!-- Award 2 - Blue Circular -->
+                <div class="award-item">
+                    <img src="photos/pic.2.jpg" alt="Award 2">
+                </div>
+
+                <!-- Award 3 - Dark Circular -->
+                <div class="award-item">
+                    <img src="photos/pic.3.jpg" alt="Award 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/919999999999" class="floating-btn whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp floating-btn-icon"></i>
+            <div class="floating-btn-text">
+                <span class="label">WhatsApp Now</span>
+                <span class="sub-label">Just a Click Away, Let's Connect</span>
+            </div>
+        </a>
+        <a href="tel:+919999999999" class="floating-btn call-btn">
+            <i class="fas fa-phone-alt floating-btn-icon"></i>
+            <div class="floating-btn-text">
+                <span class="label">Call Now</span>
+                <span class="sub-label">Speak with our Consultant</span>
+            </div>
+        </a>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Work All Technology - Creative Agency</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+
+        .logo-section h1 {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .logo-section .we {
+            color: #000080;
+        }
+
+        .logo-section .work {
+            color: #ff9500;
+        }
+
+        .logo-section .all {
+            color: #ff1493;
+        }
+
+        .logo-section .technology {
+            color: #000080;
+        }
+
+        .tech-logos {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .tech-logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .left-section img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .right-section {
+            padding: 20px;
+        }
+
+        .subtitle {
+            color: #ff1493;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .main-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #000080;
+            line-height: 1.3;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.3);
+        }
+
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: transform 0.3s;
+        }
+
+        .contact-btn:hover {
+            transform: translateX(5px);
+        }
+
+        .whatsapp-btn {
+            background-color: #25d366;
+            color: white;
+        }
+
+        .call-btn {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .main-title {
+                font-size: 28px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .logo-section h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-section">
+                <h1>
+                    <span class="we">We</span>
+                    <span class="work">Work</span><br>
+                    <span class="all">All</span><br>
+                    <span class="technology">Technology</span>
+                </h1>
+            </div>
+            <div class="tech-logos">
+                <div class="tech-logo" title="Python">🐍</div>
+                <div class="tech-logo" title="JavaScript">JS</div>
+                <div class="tech-logo" title="Drupal">🔷</div>
+                <div class="tech-logo" title="WordPress">W</div>
+                <div class="tech-logo" title="Magento">M</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="left-section">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Modern office workspace">
+            </div>
+
+            <div class="right-section">
+                <div class="subtitle">We are creative agency</div>
+                <h2 class="main-title">We are A Creative Agency with a passion for design</h2>
+                <p class="description">
+                    We are one of the best web development agencies that stand out among thousands of players. We trust on modern and most worthy technologies to make web projects. We craft a creative website that represents your company well and grows your business.
+                </p>
+                <a href="#portfolio" class="cta-button">Our Work Portfolio ➜</a>
+
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f4ff 0%, #f9f9f9 100%);
+            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            border-radius: 20px;
+            padding: 40px 25px;
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-icon {
+            font-size: 64px;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex-grow: 1;
+        }
+
+        .tech-tag {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #333;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+        }
+
+        .service-card:hover .tech-tag {
+            background-color: rgba(0, 0, 0, 0.15);
+            transform: translateX(5px);
+        }
+
+        /* Card Colors */
+        .card-ecommerce {
+            background: linear-gradient(135deg, #FFC857 0%, #FFB84D 100%);
+        }
+
+        .card-mobile {
+            background: linear-gradient(135deg, #FF6B9D 0%, #F64A8A 100%);
+        }
+
+        .card-trending {
+            background: linear-gradient(135deg, #4ECDC4 0%, #40B8A8 100%);
+        }
+
+        .card-digital {
+            background: linear-gradient(135deg, #FFD93D 0%, #FFC857 100%);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .service-card {
+                min-height: 350px;
+                padding: 30px 20px;
+            }
+
+            .card-title {
+                font-size: 20px;
+            }
+
+            .card-icon {
+                font-size: 48px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            background: linear-gradient(135deg, #25D366, #1da851);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            width: 70px;
+            height: 70px;
+            font-size: 32px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            bottom: 90px;
+            right: 0;
+            background: white;
+            color: #1a1a1a;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .whatsapp-button:hover .whatsapp-tooltip {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>Comprehensive solutions for your business needs</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Ecommerce Card -->
+            <div class="service-card card-ecommerce">
+                <div class="card-icon">🛍️</div>
+                <h3 class="card-title">Ecommerce Development</h3>
+                <div class="tech-tags">
+                    <span class="tech-tag">MAGENTO</span>
+                    <span class="tech-tag">WP</span>
+                    <span class="tech-tag">SHOPIFY</span>
+                    <span class="tech-tag">LARAVEL</span>
+                </div>
+            </div>
+
+            <!-- Mobile App Card -->
+            <div class="service-card card-mobile">
+                <div class="card-icon">📱</div>
+                <h3 class="card-title">Mobile App Development</h3>
+                <div class="tech-tags">
+                    <span class="tech-tag">IPHONE</span>
+                    <span class="tech-tag">ANDROID</span>
+                    <span class="tech-tag">CROSS PLATFORM</span>
+                </div>
+            </div>
+
+            <!-- Trending Technologies Card -->
+            <div class="service-card card-trending">
+                <div class="card-icon">⚡</div>
+                <h3 class="card-title">Trending Technologies</h3>
+                <div class="tech-tags">
+                    <span class="tech-tag">REACT.JS</span>
+                    <span class="tech-tag">NODE.JS</span>
+                    <span class="tech-tag">ANGULAR.JS</span>
+                </div>
+            </div>
+
+            <!-- Digital Marketing Card -->
+            <div class="service-card card-digital">
+                <div class="card-icon">📊</div>
+                <h3 class="card-title">Digital Marketing</h3>
+                <div class="tech-tags">
+                    <span class="tech-tag">SEO</span>
+                    <span class="tech-tag">CMS</span>
+                    <span class="tech-tag">PPC</span>
+                    <span class="tech-tag">SMM</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            border-radius: 12px;
+            padding: 40px 30px;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, currentColor, transparent);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-pink {
+            background-color: #fce4ec;
+            color: #ec407a;
+        }
+
+        .card-cyan {
+            background-color: #e0f7fa;
+            color: #26c6da;
+        }
+
+        .card-yellow {
+            background-color: #fff9c4;
+            color: #ffa726;
+        }
+
+        .card-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background-color: rgba(0, 0, 0, 0.08);
+            color: #666;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .card-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 30px 20px;
+            }
+
+            .card-title {
+                font-size: 20px;
+            }
+
+            .card-icon {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="services-grid">
+            <div class="service-card card-pink">
+                <div class="card-icon">📱</div>
+                <h3 class="card-title">Mobile App Development</h3>
+                <div class="tech-tags">
+                    <span class="tech-tag">IPHONE</span>
+                    <span class="tech-tag">ANDROID</span>
+                    <span class="tech-tag">CROSS PLATFORM</span>
+                </div>
+                <p class="card-description">Transform and mobilize your business anytime, anywhere with custom mobile app development services from Disigik.</p>
+            </div>
+
+            <div class="service-card card-cyan">
+                <div class="card-icon">⚡</div>
+                <h3 class="card-title">Trending Technologies</h3>
+                <div class="tech-tags">
+                    <span class="tech-tag">REACT.JS</span>
+                    <span class="tech-tag">NODE.JS</span>
+                    <span class="tech-tag">ANGULAR.JS</span>
+                </div>
+                <p class="card-description">Stay ahead of the curve with our expertise in the latest and trending web technologies to build robust applications.</p>
+            </div>
+
+            <div class="service-card card-yellow">
+                <div class="card-icon">📊</div>
+                <h3 class="card-title">Digital Marketing</h3>
+                <div class="tech-tags">
+                    <span class="tech-tag">SEO</span>
+                    <span class="tech-tag">CMS</span>
+                    <span class="tech-tag">PPC</span>
+                    <span class="tech-tag">SMM</span>
+                </div>
+                <p class="card-description">Boost your online presence and drive conversions with our comprehensive digital marketing strategies and solutions.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Choose Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .left-section {
+            padding-right: 20px;
+        }
+
+        .section-label {
+            color: #ff1493;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .main-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #000080;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .main-title .highlight {
+            color: #ff9500;
+            margin: 0 8px;
+        }
+
+        .main-title .highlight-pink {
+            color: #ff1493;
+        }
+
+        .description {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 8px;
+        }
+
+        .feature-content p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .right-section {
+            position: relative;
+        }
+
+        .image-frame {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .frame-border {
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(135deg, #2196f3 0%, #ff1493 100%);
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .info-box {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-box p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .contact-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            color: white;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-btn:hover {
+            transform: translateX(-5px);
+        }
+
+        .whatsapp-btn {
+            background-color: #25d366;
+        }
+
+        .call-btn {
+            background-color: #2196f3;
+        }
+
+        .btn-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn-text-main {
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .btn-text-sub {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .main-title {
+                font-size: 36px;
+            }
+
+            .right-section {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-label {
+                font-size: 12px;
+            }
+
+            .main-title {
+                font-size: 28px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .feature-content h4 {
+                font-size: 16px;
+            }
+
+            .contact-buttons {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                flex-direction: row;
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <div class="left-section">
+                <div class="section-label">Why Choose Us</div>
+                <h1 class="main-title">
+                    Why The <span class="highlight">Diginik Solutions</span>
+                    <br>Ranked Top Among The Leading Web & App Development Companies
+                </h1>
+                <p class="description">
+                    Diginik Solutions is a top-rated Jalgaon based website development company providing solutions for corporate website development, digital marketing, mobile app development, e-Commerce Website development and seo services.
+                </p>
+
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">🖥️</div>
+                        <div class="feature-content">
+                            <h4>Streamlined Project Management</h4>
+                            <p>Project management is very crucial for efficiently handling various business projects. It helps keep stakeholders aligned with the goals and achieves timely delivery of projects.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">⚙️</div>
+                        <div class="feature-content">
+                            <h4>Expert Development Team</h4>
+                            <p>Our team of experienced developers and designers are well-versed in the latest technologies and best practices to deliver high-quality solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-content">
+                            <h4>Customer-Centric Approach</h4>
+                            <p>We prioritize understanding your unique business needs and deliver customized solutions that align with your goals and vision.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-section">
+                <div class="image-frame">
+                    <div class="frame-border"></div>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop" alt="Team collaboration">
+                </div>
+
+                <div class="info-box">
+                    <p>Software development refers to an iterative logical process that aims to create a programmed software to meet unique business or personal objectives, goals, or processes. The objective is achieved by a software developer writing computer code. However, it also involves multiple steps such as research, designing a data and process flow, writing technical documentation, comprehensively testing, debugging and deployment.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries We Work For</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faf5f0;
+            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            color: #ff1493;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .main-title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .main-title .highlight {
+            color: #ff9500;
+        }
+
+        .main-title .highlight-pink {
+            color: #ff1493;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        .left-section {
+            padding-top: 20px;
+        }
+
+        .description {
+            font-size: 15px;
+            color: #777;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .right-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .industry-card {
+            border-radius: 16px;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 180px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000;
+            line-height: 1.4;
+        }
+
+        .cyan {
+            background: linear-gradient(135deg, #5dd9d1 0%, #4dd0c1 100%);
+            color: #0a4d47;
+        }
+
+        .yellow {
+            background: linear-gradient(135deg, #ffeb99 0%, #ffe082 100%);
+            color: #8b7500;
+        }
+
+        .mint {
+            background: linear-gradient(135deg, #80deea 0%, #66bb6a 100%);
+            color: #1b5e20;
+        }
+
+        .orange {
+            background: linear-gradient(135deg, #ffb74d 0%, #ff9800 100%);
+            color: #e65100;
+        }
+
+        .lime {
+            background: linear-gradient(135deg, #cddc39 0%, #aed581 100%);
+            color: #558b2f;
+        }
+
+        .pink {
+            background: linear-gradient(135deg, #f48fb1 0%, #f06292 100%);
+            color: #880e4f;
+        }
+
+        .purple {
+            background: linear-gradient(135deg, #ce93d8 0%, #ba68c8 100%);
+            color: #4a148c;
+        }
+
+        .light-green {
+            background: linear-gradient(135deg, #81c784 0%, #66bb6a 100%);
+            color: #1b5e20;
+        }
+
+        .blue {
+            background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 100%);
+            color: #0d47a1;
+        }
+
+        .light-cyan {
+            background: linear-gradient(135deg, #80deea 0%, #4dd0e1 100%);
+            color: #006064;
+        }
+
+        .cream {
+            background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
+            color: #8b7500;
+        }
+
+        .light-mint {
+            background: linear-gradient(135deg, #80deea 0%, #a5d6a7 100%);
+            color: #004d40;
+        }
+
+        .contact-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            color: white;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-btn:hover {
+            transform: translateX(-5px);
+        }
+
+        .whatsapp-btn {
+            background-color: #25d366;
+        }
+
+        .call-btn {
+            background-color: #2196f3;
+        }
+
+        .btn-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn-text-main {
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .btn-text-sub {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .right-section {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .main-title {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .right-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .main-title {
+                font-size: 28px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .industry-card {
+                min-height: 150px;
+                padding: 20px 15px;
+            }
+
+            .card-icon {
+                font-size: 40px;
+            }
+
+            .card-title {
+                font-size: 14px;
+            }
+
+            .contact-buttons {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                flex-direction: row;
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section-label">Industries We Work For</div>
+        
+        <div class="content-wrapper">
+            <div class="left-section">
+                <h1 class="main-title">
+                    <span class="highlight">›Helping Businesses</span> in <span class="highlight-pink">All Domains</span>
+                </h1>
+                <p class="description">
+                    We develop websites that build businesses! We believe, there is no room for a one-size-fits-all approach in web development services. Each website is unique and it needs a personal touch to meet specific business needs. Our experienced UI/UX designers and full stack web development team can effectively transform your idea into reality.
+                </p>
+                <p class="description">
+                    As a reputable website development company in India, we've assisted hundreds of companies worldwide to achieve their goals, drive businesses growth, and create happy customers. From LAMP to MEAN, business websites for startups to custom web applications for corporate - we do it all! Engage our custom web design services to build a stunning website for your business.
+                </p>
+            </div>
+
+            <div class="right-section">
+                <div class="industry-card cyan">
+                    <div class="card-icon">👥</div>
+                    <div class="card-title">Social Networking</div>
+                </div>
+
+                <div class="industry-card yellow">
+                    <div class="card-icon">📱</div>
+                    <div class="card-title">Digital Marketing</div>
+                </div>
+
+                <div class="industry-card mint">
+                    <div class="card-icon">🛍️</div>
+                    <div class="card-title">Ecommerce Development</div>
+                </div>
+
+                <div class="industry-card orange">
+                    <div class="card-icon">🎬</div>
+                    <div class="card-title">Video Service</div>
+                </div>
+
+                <div class="industry-card lime">
+                    <div class="card-icon">🏦</div>
+                    <div class="card-title">Banking Service</div>
+                </div>
+
+                <div class="industry-card pink">
+                    <div class="card-icon">🏢</div>
+                    <div class="card-title">Enterprise Service</div>
+                </div>
+
+                <div class="industry-card purple">
+                    <div class="card-icon">🎓</div>
+                    <div class="card-title">Education Service</div>
+                </div>
+
+                <div class="industry-card light-green">
+                    <div class="card-icon">✈️</div>
+                    <div class="card-title">Tour and Travels</div>
+                </div>
+
+                <div class="industry-card light-cyan">
+                    <div class="card-icon">⚕️</div>
+                    <div class="card-title">Health Service</div>
+                </div>
+
+                <div class="industry-card blue">
+                    <div class="card-icon">🎫</div>
+                    <div class="card-title">Event & Ticket</div>
+                </div>
+
+                <div class="industry-card cream">
+                    <div class="card-icon">🍽️</div>
+                    <div class="card-title">Restaurant Service</div>
+                </div>
+
+                <div class="industry-card light-mint">
+                    <div class="card-icon">💼</div>
+                    <div class="card-title">Business Consultant</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Testimonials & Newsletter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f9f9f9;
+        }
+        
+        .testimonial-section {
+            background: #fff;
+            padding: 80px 40px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .left-content {
+            flex: 1;
+        }
+        
+        .label {
+            color: #e91e63;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        h2 {
+            font-size: 52px;
+            color: #0a1f5e;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+        
+        .testimonial-card {
+            flex: 1;
+            position: relative;
+            background: #fff;
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .quote-bg {
+            position: absolute;
+            left: -60px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #ffd54f 0%, #ffb300 100%);
+            border-radius: 50% 50% 50% 0;
+            z-index: -1;
+        }
+        
+        .testimonial-text {
+            color: #666;
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .client-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .client-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .client-details h4 {
+            color: #0a1f5e;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .client-details p {
+            color: #999;
+            font-size: 14px;
+        }
+        
+        .quote-icon {
+            position: absolute;
+            right: 40px;
+            top: 40px;
+            font-size: 80px;
+            color: #00e5c8;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .carousel-dots {
+            position: absolute;
+            right: 40px;
+            bottom: 40px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .dot.active {
+            background: #e91e63;
+            width: 30px;
+            border-radius: 5px;
+        }
+        
+        /* Newsletter Section */
+        .newsletter-section {
+            background: #f5f5f5;
+            padding: 60px 40px;
+        }
+        
+        .newsletter-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .newsletter-content {
+            flex: 1;
+        }
+        
+        .newsletter-content h3 {
+            font-size: 42px;
+            color: #0a1f5e;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .newsletter-content p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .newsletter-form {
+            flex: 1;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 18px 25px;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+            transition: border 0.3s;
+        }
+        
+        .newsletter-form input:focus {
+            border-color: #e91e63;
+        }
+        
+        .newsletter-form button {
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            border: none;
+            border-radius: 50px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .newsletter-form button::after {
+            content: '→';
+            font-size: 20px;
+        }
+        
+        @media (max-width: 1024px) {
+            .container, .newsletter-container {
+                flex-direction: column;
+            }
+            
+            .quote-bg {
+                left: 50%;
+                transform: translateX(-50%);
+                top: -60px;
+            }
+            
+            h2 {
+                font-size: 40px;
+            }
+            
+            .newsletter-content h3 {
+                font-size: 32px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .testimonial-section, .newsletter-section {
+                padding: 40px 20px;
+            }
+            
+            h2 {
+                font-size: 32px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="left-content">
+                <div class="label">WHAT OUR CLIENTS SAY ABOUT DIGINIK SOLUTIONS.</div>
+                <h2>Over 1200+ Satisfied Clients and Growing</h2>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="quote-bg"></div>
+                <div class="quote-icon">"</div>
+                
+                <div class="testimonial-text">
+                    "Excellent services provided by Diginik Solutions. we are using the services of Diginik Solutions solutions from last 3 years. Diginik Solutions. Solutions maintaining our business website. We have no complaint of Diginik Solutions. best web designing and development company in Jalgaon."
+                </div>
+                
+                <div class="client-info">
+                    <div class="client-avatar">
+                        <img src="https://via.placeholder.com/70" alt="Shyam Kumawat">
+                    </div>
+                    <div class="client-details">
+                        <h4>Shyam Kumawat</h4>
+                        <p>Transport Company</p>
+                    </div>
+                </div>
+                
+                <div class="carousel-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h3>Get New Insights Weekly</h3>
+                <p>Your Personal data is secure as per our policy we dont share your personal information, Freely Subscribe !</p>
+            </div>
+            
+            <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+                <input type="email" placeholder="Email Your Address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    
+    <script>
+        function handleSubscribe(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input').value;
+            alert(`Thank you for subscribing with ${email}!`);
+            event.target.reset();
+        }
+        
+        // Carousel dots functionality
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diginik Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 50px;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-top-bar {
+            background: linear-gradient(90deg, #ff6b35 0%, #d32f2f 50%, #1976d2 100%);
+            height: 4px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: 50px;
+            background: linear-gradient(135deg, #1976d2 0%, #ff6b35 50%, #d32f2f 100%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1976d2;
+        }
+
+        .nav-links .dropdown {
+            position: relative;
+        }
+
+        .nav-links .dropdown::after {
+            content: '+';
+            margin-left: 5px;
+            font-size: 16px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #1976d2 0%, #00bcd4 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(25, 118, 210, 0.3);
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
+            padding: 50px;
+            margin: 40px 0;
+        }
+
+        .newsletter-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .newsletter-content h2 {
+            font-size: 42px;
+            color: #000080;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-content p {
+            font-size: 15px;
+            color: #999;
+            line-height: 1.8;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 25px 0 0 25px;
+            font-size: 14px;
+            background-color: white;
+        }
+
+        .newsletter-form input::placeholder {
+            color: #bbb;
+        }
+
+        .newsletter-form button {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #ffb366 0%, #ff1493 100%);
+            color: white;
+            border: none;
+            border-radius: 0 25px 25px 0;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateX(3px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: white;
+            padding: 60px 50px;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-logo-img {
+            width: 150px;
+            height: 60px;
+            background: linear-gradient(135deg, #1976d2 0%, #ff6b35 50%, #d32f2f 100%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .footer-logo p {
+            font-size: 13px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-section a {
+            text-decoration: none;
+            color: #777;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #1976d2;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            font-size: 24px;
+            min-width: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .contact-info-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .contact-info-value {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+        }
+
+        @media (max-width: 1024px) {
+            nav {
+                padding: 15px 30px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 12px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            .newsletter-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input {
+                border-radius: 25px;
+            }
+
+            .newsletter-form button {
+                border-radius: 25px;
+                margin-top: 10px;
+            }
+
+            .newsletter-content h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-top-bar"></div>
+        <div class="logo">
+            <div class="logo-img">DN</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about" class="dropdown">ABOUT US</a></li>
+            <li><a href="#services" class="dropdown">SERVICES</a></li>
+            <li><a href="#technology" class="dropdown">TECHNOLOGY</a></li>
+            <li><a href="#blog">BLOG</a></li>
+            <li><a href="#contact">CONTACT US</a></li>
+        </ul>
+        <button class="cta-button">Request A Quote</button>
+    </nav>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h2>Get New Insights Weekly</h2>
+                <p>Your Personal data is secure as per our policy we dont share your personal information. Freely Subscribe !</p>
+            </div>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Email Your Address" required>
+                <button type="submit">Subscribe ›</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-section footer-logo">
+                <div class="footer-logo-img">DN</div>
+                <p><strong>Software & Digital Marketing Solutions</strong></p>
+                <p>Diginik Solutions is an innovative one-stop Web Solution Company in Jalgaon, delivering solutions with customized & quality services to businesses globally.</p>
+            </div>
+
+            <!-- Our Links -->
+            <div class="footer-section">
+                <h3>Our Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#why">Why Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#quote">Get A Quote</a></li>
+                    <li><a href="#faq">Customer's FAQ</a></li>
+                    <li><a href="#refund">Refund Policy</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Us -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-info">
+                        <div class="contact-info-label">Address</div>
+                        <div class="contact-info-value">front of hanuman mandir, basement, Ring Rd, Datta Colony, Jalgaon, Maharashtra 425001</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-info">
+                        <div class="contact-info-label">Email</div>
+                        <div class="contact-info-value">info@diginik.in</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-info">
+                        <div class="contact-info-label">Phone</div>
+                        <div class="contact-info-value">+91-9588475709</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Diginik Solutions. All rights reserved. | Privacy Policy | Terms & Conditions</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
